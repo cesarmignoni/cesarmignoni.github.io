@@ -1667,10 +1667,10 @@ para devolver un único valor que se aplica a un grupo de registros.</p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="manipulación-de-datos-en-sas-utilzando-sql" class="section level1">
-<h1>Manipulación de datos en SAS utilzando SQL</h1>
-<p>El conocimiento obtenido hasta ahora sobre <strong>SQL</strong> es
-suficiente para comenzar a usarlo en SAS.</p>
+<div id="consultas-sql-utilzando-sas" class="section level1">
+<h1>Consultas SQL utilzando SAS</h1>
+<div id="procedimiento-proc-sql" class="section level2">
+<h2>Procedimiento PROC SQL</h2>
 <p>Como se mencionó en la intro de este material el procedimiento
 <em>PROC SQL</em> en <strong>SAS</strong> es el que permite ejecutar las
 estructuras del lenguaje <strong>SQL</strong> encerrando las cláusulas
@@ -1702,8 +1702,7 @@ siguiente imagen que muestra una vista de resultados de SAS:</p>
 <p>Las columnas se presentan en el orden en que se especificaron en
 SELECT y, de forma predeterminada, se utiliza la etiqueta de la columna
 (si existe).</p>
-<div id="una-salida-distinta-para-los-resultados" class="section level2">
-<h2>Una salida distinta para los resultados</h2>
+<p><strong>Definir una salida distinta </strong></p>
 <p><em>PROC SQL</em> funciona igual que todos los demás procedimientos
 <strong>SAS</strong>, los resultados de una consulta se muestran de
 forma predeterminada en la ventana de output, pero es posible defnir
@@ -1744,8 +1743,8 @@ columnas en el comando <em>SELECT</em> no solo determina el orden en la
 salida de la consulta, sino que también determina el orden en una tabla
 si se usa <em>CREATE TABLE</em>.</p>
 </div>
-<div id="opciones-de-la-declaración-select" class="section level2">
-<h2>Opciones de la declaración SELECT</h2>
+<div id="instrucción-select" class="section level2">
+<h2>Instrucción SELECT</h2>
 <p>Las columnas en un comando <em>SELECT</em> se pueden renombrar,
 etiquetar o reformatear.</p>
 <p>• Cambiar nombre: usar ‘AS <em>nuevo nombre</em>’</p>
@@ -1775,8 +1774,7 @@ en una columna. Se puede renombrar, reformatear y volver a etiquetar,
 todo al mismo tiempo. Simplemente hay que separar las asignaciones de
 atributos con espacios. En la consulta anterior a la variable
 <em>relig</em> se le cambia la etiqueta y el ancho.</p>
-<div id="selección-de-todas-las-columnas" class="section level3">
-<h3>Selección de todas las columnas</h3>
+<p><strong>Selección de todas las columnas</strong></p>
 <p>Para especificar en una consulta que se quieren obtener todas las
 columnas de una tabla se utiliza un asterisco (*) en lugar de una lista
 de las columnas. Por ejemplo:</p>
@@ -1790,9 +1788,7 @@ conocimiento previo de los datos para saber que es lo que se obtendrá.
 Se debe considerar que esta forma de acceso rápido puede ser
 problemático cuando se está trabajando con combinaciones de varias
 tablas y con las operaciones de conjuntos.</p>
-</div>
-<div id="creación-de-nuevas-columnas" class="section level3">
-<h3>Creación de nuevas columnas</h3>
+<p><strong>Creación de nuevas columnas</strong></p>
 <p>De la misma manera que se utilizó la palabra clave <em>AS</em> para
 cambiar el nombre de una columna, también se puede usar para nombrar una
 nueva columna. En el siguiente ejemplo se utilizan dos columnas
@@ -1822,9 +1818,10 @@ Observar la importancia de nombrar las nuevas columnas, principalmente
 cuando se esta creando un nuevo conjunto de datos o se esta haciendo una
 salida impresa.</p>
 </div>
-</div>
-<div id="selección-de-filas-con-la-cláusula-where" class="section level2">
-<h2>Selección de filas con la cláusula WHERE</h2>
+<div id="cláusula-where" class="section level2">
+<h2>Cláusula WHERE</h2>
+<div id="selección-de-filas" class="section level3">
+<h3>Selección de filas</h3>
 <p>Una vez que se han definido las columnas que se quieren seleccionar
 para la consulta, es posible que no se quieran todas las filas del
 conjunto de datos de origen.</p>
@@ -1906,8 +1903,9 @@ diferente y el paso <em>DATA</em> no se ejecuta:</p>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    run;</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    ERROR<span class="sc">:</span> WHERE clause operator requires compatible variables.</span></code></pre></div>
-<div id="operadores-especiales-de-la-cláusula-where" class="section level3">
-<h3>Operadores especiales de la cláusula WHERE</h3>
+</div>
+<div id="operadores-especiales" class="section level3">
+<h3>Operadores especiales</h3>
 <p>Hay una serie de operadores que solo se pueden usar en una cláusula
 <em>WHERE</em>. Algunos de ellos pueden simplificar y hacer más
 eficiente la programación porque reducen el código necesaio para
@@ -1958,9 +1956,8 @@ dos condiciones producen el mismo resultado:</p>
 se recomienda que se especifiquen en la secuencia correcta para
 facilitar la comprensión.</p>
 </div>
-</div>
-<div id="ordenar-los-datos-seleccionados" class="section level2">
-<h2>Ordenar los datos seleccionados</h2>
+<div id="ordenar-datos" class="section level3">
+<h3>Ordenar datos</h3>
 <p>Tanto <em>SELECT… FROM…</em>, como <em>WHERE</em>, juegan un papel
 importante para determinar qué información se incluirá en los resultados
 de la consulta. La cláusula <em>ORDER BY</em> toma las filas
@@ -1981,8 +1978,7 @@ BY</strong> es similar a la declaración <strong>BY</strong> de
 <strong>PROC SORT</strong>. Si se quieren ordenar las filas por más de
 una variable, las mismas se deben colocar en la secuencia de orden
 separadas por comas.</p>
-<div id="opción-desc-en-order-by" class="section level3">
-<h3>Opción DESC en ORDER BY</h3>
+<p><strong>Opción DESC en ORDER BY</strong></p>
 <p>El orden de clasificación predeterminado es ascendente. Para obtener
 una clasificación descendente, se usa la opción <strong>DESC</strong>
 seguido al nombre de la variable.</p>
@@ -2171,8 +2167,8 @@ columna no resumida.</p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="manipulación-de-datos-en-r-utilzando-sql" class="section level1">
-<h1>Manipulación de datos en R utilzando SQL</h1>
+<div id="consultas-sql-utilzando-r" class="section level1">
+<h1>Consultas SQL utilzando R</h1>
 <p>Este material cubre solo la sintaxis de las consultas
 <strong>SQL</strong> utilizando el paquete <em>sqldf</em> (<a href="https://cran.r-project.org/web/packages/sqldf/index.html" class="uri">https://cran.r-project.org/web/packages/sqldf/index.html</a>)
 que permite las consultas <strong>SQL</strong>.</p>
@@ -2274,7 +2270,7 @@ de consulta entre comillas.</p>
 ## 4    3 118            30
 ## 5    5 118            30</code></pre>
 </div>
-<div id="cláusula-where" class="section level3">
+<div id="cláusula-where-1" class="section level3">
 <h3>Cláusula WHERE</h3>
 <p>Las declaraciones condicionales se pueden agregar a través de
 <em>WHERE</em>:</p>
