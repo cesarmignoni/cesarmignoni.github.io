@@ -1635,8 +1635,8 @@ sigladepto) sea producción (=’prod’). En el caso de que sólo uno de los
 empleados cumpliera la condición se obtendría una sola fila como
 salida.</p>
 </div>
-<div id="componentes-del-sql" class="section level1">
-<h1>Componentes del SQL</h1>
+<div id="componentes-de-sql" class="section level1">
+<h1>Componentes de SQL</h1>
 <p>El lenguaje <strong>SQL</strong> está compuesto por comandos,
 cláusulas, operadores y funciones de agregación. Estos elementos se
 combinan en las instrucciones para crear, actualizar y manipular las
@@ -1644,27 +1644,204 @@ bases de datos.</p>
 <div id="comandos" class="section level2">
 <h2>Comandos</h2>
 <p>Existen dos tipos de comandos <strong>SQL</strong>:</p>
-<p>• Los que permiten crear y definir nuevas tablas, campos e índices en
-las bases de datos.</p>
-<p>• Los que permiten generar consultas para ordenar, filtrar y extraer
-datos de la base de datos.</p>
+<ul>
+<li>
+Los que permiten crear y definir nuevas tablas, campos e índices en las
+bases de datos.
+</li>
+<br>
+<ul>
+<li>
+<b>CREATE</b> Utilizado para crear nuevas tablas y campos.
+</li>
+<li>
+<b>DROP</b> Empleado para eliminar tablas.
+</li>
+<li>
+<b>ALTER</b> Utilizado para modificar las tablas agregando campos o
+cambiando la definición de los campos.
+</li>
+</ul>
+<p><br></p>
+<li>
+Los que permiten generar consultas para ordenar, filtrar y extraer datos
+de la base de datos.
+</li>
+<br>
+<ul>
+<li>
+<b>SELECT</b> Utilizado para consultar registros de la base de datos que
+satisfagan un criterio determinado.
+</li>
+<li>
+<b>INSERT</b> Utilizado para cargar datos en la base de datos en una
+única operación.
+</li>
+<li>
+<b>UPDATE</b> Utilizado para modificar los valores de los campos y
+registros especificados.
+</li>
+<li>
+<b>DELETE</b> Utilizado para eliminar registros de una tabla de una base
+de datos.
+</li>
+</ul>
+</ul>
 </div>
 <div id="cláusulas" class="section level2">
 <h2>Cláusulas</h2>
 <p>Las cláusulas son condiciones utilizadas para indicar cuales son los
 datos que se quieren seleccionar o manipular.</p>
+<ul>
+<li>
+<b>FROM</b> Utilizada para especificar la tabla de la cual se van a
+seleccionar los registros.
+</li>
+<li>
+<b>WHERE</b> Utilizada para especificar las condiciones que deben reunir
+los registros que se van a seleccionar.
+</li>
+<li>
+<b>GROUP BY</b> Utilizada para clasificar los registros seleccionados en
+grupos específicos.
+</li>
+<li>
+<b>HAVING</b> Utilizada para expresar la condición que debe satisfacer
+cada grupo.
+</li>
+<li>
+<b>ORDER BY</b> Utilizada para ordenar los registros seleccionados de
+acuerdo con un orden específico.
+</li>
+</ul>
+<!--
+<table>
+<tr>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+-->
 </div>
 <div id="operadores" class="section level2">
 <h2>Operadores</h2>
-<p><strong>Operadores Lógicos</strong></p>
-<div style="page-break-after: always;"></div>
-<p><strong>Operadores de Comparación</strong></p>
+<ul>
+<li>
+<b>Operadores Lógicos</b> <br> <br>
+<table>
+<tr>
+<td>
+<b> NOT </b> Devuelve el valor contrario de la expresión.
+</td>
+</tr>
+<tr>
+<td>
+<b>AND </b> Evalúa dos condiciones y devuelve un valor de verdad sólo si
+ambas son ciertas.
+</td>
+</tr>
+<tr>
+<td>
+<b>OR</b> Evalúa dos condiciones y devuelve un valor de verdad si alguna
+de las dos es cierta.
+</td>
+</tr>
+</table>
+</li>
+<p><br></p>
+<li>
+<b>Operadores de Comparación</b> <br> <br>
+<table>
+<tr>
+<td>
+&lt; Menor que
+</td>
+</tr>
+<tr>
+<td>
+&gt; Mayor que
+</td>
+</tr>
+<tr>
+<td>
+&lt;&gt; Distinto de
+</td>
+</tr>
+<tr>
+<td>
+&lt;= Menor o Igual que
+</td>
+</tr>
+<tr>
+<td>
+&gt;= Mayor o Igual que
+</td>
+</tr>
+<tr>
+<td>
+= Igual que
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<table>
+<caption>
+<i>Nota:</i>
+</caption>
+<tr>
+<td>
+<b>BETWEEN</b> Permite especificar un intervalo de valores. <br>
+<b>LIKE</b> Compara una cadena de texto con una expresión regular.
+</td>
+</tr>
+</table>
 </div>
 <div id="funciones-de-agregación" class="section level2">
 <h2>Funciones de Agregación</h2>
 <p>Las funciones de agregación se usan dentro de una cláusula SELECT
 para devolver un único valor que se aplica a un grupo de registros.</p>
-<div style="page-break-after: always;"></div>
+<ul>
+<li>
+<b>AVG</b> Calcula el promedio de los valores de un campo determinado.
+</li>
+<li>
+<b>COUNT</b> Devuelve el número de registros de la selección.
+</li>
+<li>
+<b>SUM</b> Suma los valores de un campo determinado.
+</li>
+<li>
+<b>MAX</b> Devuelve el valor más alto de un campo especificado.
+</li>
+<li>
+<b>MIN</b> Devuelve el valor más bajo de un campo especificado.
+</li>
+</ul>
+<!--
+<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+-->
 </div>
 </div>
 <div id="consultas-sql-utilzando-sas" class="section level1">
@@ -1747,10 +1924,20 @@ si se usa <em>CREATE TABLE</em>.</p>
 <h2>Instrucción SELECT</h2>
 <p>Las columnas en un comando <em>SELECT</em> se pueden renombrar,
 etiquetar o reformatear.</p>
-<p>• Cambiar nombre: usar ‘AS <em>nuevo nombre</em>’</p>
-<p>• Etiqueta: usar ‘LABEL = <em>etiqueta deseada</em>’</p>
-<p>• Formato: usar ’FORMAT = <em>formato deseado</em></p>
-<p>• Longitud: usar ’LENGTH = <em>amplitud deseada</em></p>
+<ul>
+<li>
+Cambiar nombre: usar ‘AS <em>nuevo nombre</em>’
+</li>
+<li>
+Etiqueta: usar ‘LABEL = <em>etiqueta deseada</em>’
+</li>
+<li>
+Formato: usar ’FORMAT = <em>formato deseado</em>
+</li>
+<li>
+Longitud: usar ’LENGTH = <em>amplitud deseada</em>
+</li>
+</ul>
 <p>La siguiente consulta crearía un conjunto de datos SAS temporal
 llamado <em>MundoInfo</em> que tiene tres variables y cuyos nombres
 serán: <em>PS</em>, <em>PB</em> y <em>RELIG</em></p>
@@ -1910,7 +2097,8 @@ diferente y el paso <em>DATA</em> no se ejecuta:</p>
 <em>WHERE</em>. Algunos de ellos pueden simplificar y hacer más
 eficiente la programación porque reducen el código necesaio para
 realizar algunas operaciones.</p>
-<p>• Los operadores <em>IS NULL</em> y <em>IS MISSING</em></p>
+<div id="is-nullis-missing" class="section level4">
+<h4><b>IS NULL/IS MISSING</b></h4>
 <p>Es posible usar los operadores <em>IS NULL</em> o <em>IS MISSING</em>
 para que devuelvan las filas con valores faltantes. La ventaja de <em>IS
 NULL</em> (o <em>IS MISSING</em>) es que la sintaxis es la misma si la
@@ -1929,7 +2117,9 @@ nulos son un caso único y se comparan con éxito con cualquier cosa que
 no sean otros valores nulos. Se debe tener en cuenta cómo se manejan los
 valores nulos si se está utilizando <strong>SQL</strong> en un entorno
 que no sea SAS.</p>
-<p>• El operador BETWEEN</p>
+</div>
+<div id="between" class="section level4">
+<h4><b>BETWEEN</b></h4>
 <p>El operador <em>BETWEEN</em> le permite buscar un valor que se
 encuentre entre otros dos valores.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    proc sql;</span>
@@ -1955,6 +2145,7 @@ dos condiciones producen el mismo resultado:</p>
 <p>El orden en que se colocan los valores entre no es importante, aunque
 se recomienda que se especifiquen en la secuencia correcta para
 facilitar la comprensión.</p>
+</div>
 </div>
 <div id="ordenar-datos" class="section level3">
 <h3>Ordenar datos</h3>
@@ -2004,6 +2195,44 @@ la coma o punto y coma.</p>
 datos en las tablas. Estas funciones pueden actuar en múltiples columnas
 en una fila o en una sola columna a través de filas. La siguiente lista
 es de las funciones agregadas.</p>
+<ul>
+<li>
+<b>Avg</b> promedio de valores
+</li>
+<li>
+<b>NMiss</b> número de valores faltantes
+</li>
+<li>
+<b>Count</b> el número de valores que no faltan
+</li>
+<li>
+<b>Range</b> rango de valores
+</li>
+<li>
+<b>Std</b> Desviación estándar
+</li>
+<li>
+<b>Freq</b> (igual que Count)
+</li>
+<li>
+<b>Sum</b> Suma de valores
+</li>
+<li>
+<b>Max</b> Valor máximo
+</li>
+<li>
+<b>Min</b> Valor mínimo
+</li>
+<li>
+<b>Mean</b> (igual que Avg)
+</li>
+<li>
+<b>N</b> (igual que Count)
+</li>
+<li>
+<b>Var</b> Variancia
+</li>
+</ul>
 <p>Se ha visto el uso de funciones <strong>SAS</strong> en un comando
 <em>SELECT</em> para crear nuevas columnas basadas en el valor de una
 columna existente. Las <em>funciones agregadas</em> también crean nuevas
@@ -2109,8 +2338,8 @@ la función <em>COUNT</em>. Esta consulta devolverá el número de valores
 <p><em>Nota</em>: no se puede enumerar más de una columna en la función
 COUNT.</p>
 </div>
-<div id="la-cláusula-having" class="section level2">
-<h2>La cláusula HAVING</h2>
+<div id="cláusula-having" class="section level2">
+<h2>Cláusula HAVING</h2>
 <p>Para seleccionar filas en función de los resultados de una función de
 resumen se usa la cláusula <em>HAVING</em>. La cláusula <em>HAVING</em>
 es similar a la cláusula <em>WHERE</em> en que permite seleccionar filas
@@ -2164,7 +2393,6 @@ los que salen de la consulta son los mismos. Sin embargo, existe una
 gran diferencia cuando hay una función resumen en el comando
 <em>SELECT</em> y la cláusula <em>HAVING</em> hace referencia a una
 columna no resumida.</p>
-<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div id="consultas-sql-utilzando-r" class="section level1">
