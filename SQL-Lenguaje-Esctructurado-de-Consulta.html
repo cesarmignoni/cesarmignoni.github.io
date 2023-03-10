@@ -2472,8 +2472,12 @@ de consulta entre comillas.</p>
 <p>Se puede especificar un comodín asterisco para extraer todo.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>      bod2 <span class="ot">&lt;-</span> <span class="fu">sqldf</span>(<span class="st">&#39;SELECT * FROM BOD&#39;</span>) </span></code></pre></div>
 </div>
-<div id="cláusula-límit" class="section level3">
-<h3>Cláusula LÍMIT</h3>
+<div id="cláusulas-1" class="section level3">
+<h3>Cláusulas</h3>
+<ul>
+<li>
+<b>LÍMIT</b>
+</li>
 <p>Se utiliza para controlar el número de resultados devueltos.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sqldf</span>(<span class="st">&#39;SELECT * FROM iris LIMIT 5&#39;</span>)</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -2482,9 +2486,9 @@ de consulta entre comillas.</p>
 ## 3          4.7         3.2          1.3         0.2  setosa
 ## 4          4.6         3.1          1.5         0.2  setosa
 ## 5          5.0         3.6          1.4         0.2  setosa</code></pre>
-</div>
-<div id="cláusula-order-by" class="section level3">
-<h3>Cláusula ORDER BY</h3>
+<li>
+<b>ORDER BY</b>
+</li>
 <p>Permite ordenar variables usando la siguiente sintaxis:</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>      ORDER BY var1 {ASC<span class="sc">/</span>DESC}, var2 {ASC<span class="sc">/</span>DESC}</span></code></pre></div>
 <p>Donde la especificación de <em>ASC</em> para <em>ascendente</em> o
@@ -2497,18 +2501,18 @@ de consulta entre comillas.</p>
 ## 3    1 118            30
 ## 4    3 118            30
 ## 5    5 118            30</code></pre>
-</div>
-<div id="cláusula-where-1" class="section level3">
-<h3>Cláusula WHERE</h3>
+<li>
+<b>WHERE</b>
+</li>
 <p>Las declaraciones condicionales se pueden agregar a través de
 <em>WHERE</em>:</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sqldf</span>(<span class="st">&#39;SELECT demand FROM BOD WHERE Time &lt; 3&#39;</span>)</span></code></pre></div>
 <pre><code>##   demand
 ## 1    8.3
 ## 2   10.3</code></pre>
-</div>
-<div id="cláusulas-and-y-or" class="section level3">
-<h3>Cláusulas AND y OR</h3>
+<li>
+<b> AND y OR</b>
+</li>
 <p>Los operadores <em>AND</em> y <em>OR</em> son válidos para
 especificar cierto orden de las operaciones en la selección, si se usan
 juntos es aconsejable separar con paréntesis para especificar el
@@ -2521,9 +2525,9 @@ orden.</p>
 ## 3 5605 1145.690 0.464125 1300
 ## 4 8793 2280.490 0.420477 1300</code></pre>
 <p>Hay algunas formas más complicadas de usar <em>WHERE</em>:</p>
-</div>
-<div id="cláusula-in" class="section level3">
-<h3>Cláusula IN</h3>
+<li>
+<b> IN</b>
+</li>
 <p><em>WHERE IN</em> se usa de manera similar a %in% de
 <strong>R</strong>. También es compatible <em>NOT</em>.</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sqldf</span>(<span class="st">&#39;SELECT * FROM BOD WHERE Time IN (1,7)&#39;</span>)</span></code></pre></div>
@@ -2536,9 +2540,9 @@ orden.</p>
 ## 2    3   19.0
 ## 3    4   16.0
 ## 4    5   15.6</code></pre>
-</div>
-<div id="cláusula-like" class="section level3">
-<h3>Cláusula LIKE</h3>
+<li>
+<b>LIKE</b>
+</li>
 <p><em>LIKE</em> puede considerarse como un comando de expresión regular
 débil. Solo permite el comodín % único que coincide con cualquier número
 de caracteres. Por ejemplo, para extraer los datos donde el feed termina
@@ -2557,6 +2561,7 @@ con “bean”:</p>
 ## 3    181 linseed
 ## 4    141 linseed
 ## 5    260 linseed</code></pre>
+</ul>
 </div>
 <div id="datos-agregados" class="section level3">
 <h3>Datos agregados</h3>
