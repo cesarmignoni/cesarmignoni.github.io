@@ -1,0 +1,11 @@
+---
+title: "El sitio de Cesar Mignoni"
+output: html_document
+---
+
+<style type="text/css">
+.title {
+  display: none;
+}
+
+Comenzamos con las clases de SQL
